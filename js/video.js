@@ -37,18 +37,17 @@ document.querySelector("#faster").addEventListener("click", function() {
 });
 
 document.querySelector("#skip").addEventListener("click", function() { 
-	video.pause();
-	if (video.currentTime < video.duration){
-		video.currentTime += 15;
-		current = video.currentTime;
-		console.log("Current time is " + current);
-		video.play();
-	}
-	else{
+	// video.pause();
+	video.currentTime += 15;
+	current = video.currentTime;
+	console.log("Current time is " + current);
+	video.play();
+	
+	if (video.currentTime >= video.duration) {
 		video.currentTime = 0;
 		current = video.currentTime;
-		console.log("Current time is: " + current);
 		video.play();
+		console.log("Current time is: " + current);
 	}
 });
 
@@ -82,5 +81,3 @@ document.querySelector("#orig").addEventListener("click", function() {
 	document.getElementById("player1").classList.remove("oldSchool");
 	console.log("orignal");
 });
-
-
